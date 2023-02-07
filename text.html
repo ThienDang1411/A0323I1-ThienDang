@@ -27,6 +27,24 @@
 <p id="bi1"></p>
 <p id="su1"></p>
 <p id="av1"></p>
+<hr>
+<div class="box" style="text-align: center">
+    <p style="text-align: center;">ĐỔI NHIỆT ĐỘ</p>
+    <input type="text" id="temp_C" placeholder="Nhập độ C">
+    <button onclick="fSubect()">Summit</button>
+    <br>
+    <input type="text" readonly id="output3" placeholder="Độ F" style="margin-top: 12px;">
+</div>
+
+
+<div class="box" style="text-align: center">
+    <p style="text-align: center;">DIỆN TÍCH HÌNH TRÒN</p>
+    <input type="text" id="radian" placeholder="Bán kính hình tròn">
+    <button onclick="SSubect()">Summit</button>
+    <br>
+    <input type="text" readonly id="output" placeholder="Diện tích" style="margin-top: 12px;">
+    <br>
+</div>
 </html>
 <script>
     function doSth() {
@@ -36,8 +54,19 @@
         document.getElementById('ph1').innerText = "Điển Vật lý: " + phy;
         document.getElementById('ch1').innerText = "Điểm Hóa học: " + che;
         document.getElementById('bi1').innerText = "Điểm Sinh học:" + bio;
-        document.getElementById('su1').innerText = "Tổng điểm 3 môn:" + (phy +che +bio);
-        document.getElementById('av1').innerText = "Điểm trung bình:" + (phy+che+bio)/3;
+        document.getElementById('su1').innerText = "Tổng điểm 3 môn:" + (phy + che + bio);
+        document.getElementById('av1').innerText = "Điểm trung bình:" + (phy + che + bio) / 3;
 
+        function fSubect() {
+            var c = document.getElementById("temp_C").value.trim()
+            var f = (((parseFloat(c) * 9) / 5) + 32)
+            document.getElementById('output3').value = f;
+
+            function SSubect() {
+                var r = document.getElementById("radian").value.trim()
+                var S = parseFloat(r) * parseFloat(r) * Math.PI;
+                document.getElementById('output').value = S;
+            }
+        }
     }
 </script>
