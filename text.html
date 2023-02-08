@@ -1,58 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-    </style>
-</head>
-<body>
-<table>
-    <tr style="background-color: #dddddd">
-        <th>Company</th>
-        <th>Contact</th>
-        <th>Country</th>
+<html>
+<table border="1">
+    <tr>
+        <td>Điểm vật lý</td>
+        <td>
+            <input type="number" id="phy">
+        </td>
     </tr>
     <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-        <td>Germany</td>
-    </tr>
-    <tr style="background-color: #dddddd">
-        <td>Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-        <td>Mexico</td>
+        <td>Điểm hóa học</td>
+        <td>
+            <input type="number" id="che">
+        </td>
     </tr>
     <tr>
-        <td>Ernst Handel</td>
-        <td>Roland Mendel</td>
-        <td>Austria</td>
-    </tr>
-    <tr style="background-color: #dddddd">
-        <td>Island Trading</td>
-        <td>Helen Bennett</td>
-        <td>UK</td>
+        <td>Điểm sinh học</td>
+        <td>
+            <input type="number" id="bio">
+        </td>
     </tr>
     <tr>
-        <td>Laughing Bacchus Winecellars</td>
-        <td>Yoshi Tannamuri</td>
-        <td>Canada</td>
-    </tr>
-    <tr style="background-color: #dddddd">
-        <td>Magazzini Alimentari Riuniti</td>
-        <td>Giovanni Rovelli</td>
-        <td>Italy</td>
+        <button type="submit" onclick="doSth()">Nhập điểm</button>
     </tr>
 </table>
-</body>
+<p id="ph1"></p>
+<p id="ch1"></p>
+<p id="bi1"></p>
+<p id="su1"></p>
+<p id="av1"></p>
 </html>
+<script>
+    function doSth() {
+        let phy = +document.getElementById("phy").value;
+        let che = +document.getElementById("che").value;
+        let bio = +document.getElementById("bio").value;
+        document.getElementById('ph1').innerText = "Điển Vật lý: " + phy;
+        document.getElementById('ch1').innerText = "Điểm Hóa học: " + che;
+        document.getElementById('bi1').innerText = "Điểm Sinh học:" + bio;
+        document.getElementById('su1').innerText = "Tổng điểm 3 môn:" + (phy +che +bio);
+        document.getElementById('av1').innerText = "Điểm trung bình:" + (phy+che+bio)/3;
+
+    }
+</script>
