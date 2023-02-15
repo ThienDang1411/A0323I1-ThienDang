@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n1 = 1, n2 =0, fibo;
+
+    for (let i = 0; i < 20 ; i++) {
+        fibo = n1;
+        n1 = n1 + n2;
+        n2 = fibo;
+        document.write(fibo + ", ");
+    }
+</script>
+</body>
+</html>
