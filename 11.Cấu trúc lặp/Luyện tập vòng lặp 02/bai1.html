@@ -6,11 +6,17 @@
 </head>
 <body>
 <script>
-    let n = +prompt('nhap so nguyen')
-    let giathua = 1
-    for (var i = 1; i <= n; i++){
-        giathua = giathua * i;
-        document.write(giathua)
+
+    let n = +prompt("Nhập số lượng số Finonacci vào đây:");
+    let f1 = 0;
+    let f2 = 1;
+    let f3;
+    document.write('0<br>')
+    for (let i = 0 ;i < n ; i++){
+        f3=f1+f2;
+        f1 = f2;
+        f2=f3;
+        document.write(f1 + "<br>")
     }
 </script>
 </body>
