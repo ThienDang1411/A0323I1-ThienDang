@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>B5</title>
 </head>
 <body>
-
 <script>
-    let x = [1,3,5,7];
-    let y = [2,4,6];
-    x[2] = y[x.length-3] + x [ x[0] + y[0] ];
-    console.log(x);
-    document.write(x);
+    let n = parseInt(prompt("Nhập vào mảng số nguyên: "));
+    let arrNum = [], arrNumAm = [];
+    for(let i = 0; i < n; i++) {
+        arrNum[i] = parseInt(prompt("Nhập số vào mảng: "));
+        if(arrNum[i] < 0) {
+            arrNumAm.push(arrNum[i]);
+        }
+    }
+    document.write("Mảng số là [" + arrNum + "] <br>");
+    document.write("Mảng các số âm gồm " + arrNumAm.length + " phần tử. Mảng số nguyên âm [" + arrNumAm + "] <br>");
 </script>
 </body>
-
 </html>

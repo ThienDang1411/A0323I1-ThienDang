@@ -10,17 +10,13 @@
     do {
         num = +prompt("nhập vào 1 số: ");
         if(num > 100){
-            alert("Vui lòng giam nhiet do");
-        }else {
-            document.write(num);
+            alert("Vui lòng giam nhiet do: "+ num);
         }
-        if(num < 20){
-            alert("Vui lòng tang nhiet do");
-        }else {
-            document.write(num);
+        else if(num < 20){
+            alert("Vui lòng tang nhiet do: "+ num);
         }
-        if (num>20 && num<100){
-            alert("Nhiet do cua ban la"+ num)
+        else if (num>=20 && num<=100){
+            alert("Nhiet do cua ban la: + num)
         }
     } while (num > 100 || num <20);
 </script>
