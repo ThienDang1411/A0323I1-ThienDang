@@ -2,20 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>B5</title>
+    <title>Title</title>
 </head>
 <body>
+<p id="out"></p>
 <script>
-    let n = parseInt(prompt("Nhập vào mảng số nguyên: "));
-    let arrNum = [], arrNumAm = [];
-    for(let i = 0; i < n; i++) {
-        arrNum[i] = parseInt(prompt("Nhập số vào mảng: "));
-        if(arrNum[i] < 0) {
-            arrNumAm.push(arrNum[i]);
+    let number = +prompt("Nhập số lượng số nguyên tố muốn in:");
+    let count1 = 0;
+    let i = 0;
+    if (count1 <= number) {
+        for (let n = 2; count1 < number; n++) {
+            let isPrime = true;
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime){
+                document.write(n + ", ");
+                count1++;}
         }
     }
-    document.write("Mảng số là [" + arrNum + "] <br>");
-    document.write("Mảng các số âm gồm " + arrNumAm.length + " phần tử. Mảng số nguyên âm [" + arrNumAm + "] <br>");
 </script>
 </body>
 </html>
