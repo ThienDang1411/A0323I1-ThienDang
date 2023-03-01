@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập 3 số nguyên , trả về số nguyên nhỏ nhất</title>
+</head>
+<body>
+
+</p>
+<script>
+    let n = +prompt("nhap so nguyen thu nhat: ")
+    let n2 = +prompt("nhap so nguyen thu nhat hai: ")
+    let n3 = +prompt("nhap so nguyen thu nhat ba: ")
+    function min(n,n2,n3) {
+        if (n < n2 && n < n3){
+            document.write("số nguyên có giá trị nhỏ nhất la: " + n);
+        }else if (n2 < n && n2 < n3){
+            document.write("số nguyên có giá trị nhỏ nhất la: " + n2);
+        }else if (n3 < n2 && n3 < n){
+            document.write("số nguyên có giá trị nhỏ nhất la: " + n3);
+        }
+    }
+    min(n,n2,n3);
+</script>
+</body>
+</html>

@@ -6,7 +6,15 @@
 </head>
 <body>
 <script>
-
+    function S(r) {
+        document.write("Diện tích hình tròn là: "+ (r*r)*3.14 + "<br>");
+    }
+    function C(r) {
+        document.write("Chu vi hình tròn là: "+ (r*2)*3.14 + "<br>");
+    }
+    let r = +prompt("Nhập bán kính hình tròn");
+    S(r);
+    C(r);
 </script>
 </body>
 </html>
