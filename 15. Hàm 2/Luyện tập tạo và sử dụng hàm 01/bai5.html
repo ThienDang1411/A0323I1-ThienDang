@@ -5,7 +5,25 @@
     <title>Title</title>
 </head>
 <body>
+<input type="text" id="nhap" placeholder="nhap ten 1 ngoi sao">
+<button type="submit" onclick="tralaiten()">dich</button>
+<p id="hienthi"></p>
 <script>
+    function tralaiten() {
+        let n = document.getElementById('nhap').value;
+        let arrName = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe' , 'Regulus']
+        let arrchomsao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major' ,'Leo']
+        for (let i = 0; i<arrName.length; i++){
+            if (n === arrName[i]){
+                document.getElementById("hienthi").innerText = "chom sao la: " + arrchomsao[i];
+                break
+            }else{
+                document.getElementById('hienthi').innerText = "khong tim thay";
+            }
+
+
+        }
+    }
 
 </script>
 </body>

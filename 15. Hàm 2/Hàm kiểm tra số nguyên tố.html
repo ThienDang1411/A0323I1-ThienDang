@@ -5,6 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    let n = +prompt("nhap so");
+    function snt() {
+        if (n >= 2 && n % 1 == 0 && n % n == 0 && n % 2 !== 0 && n % 3 !== 0 && n % 5 !== 0 && n % 7 !== 0) {
+            document.write(n + ' la so nguyen to')
+        } else if (n == 2 || n == 3 || n == 5 || n == 7) {
+            document.write(n + ' la so nguyen to');
+        }else{
+            document.write(n + " khong phai la so nguen to")
+        }
+    }
+    snt();
+</script>
 </body>
+</html>
 </html>
