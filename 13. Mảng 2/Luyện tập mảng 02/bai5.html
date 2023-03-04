@@ -2,19 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Check Xem 2 Chuỗi Có Giống Nhau Hay Không</title>
 </head>
 <body>
 <script>
-    let n1 = prompt('Nhập chuỗi 1:');
-    let n2 = prompt("Nhập Chuỗi 2:");
-    if (n1 !== n2) {
-        document.write("2 Chuỗi Khác Nhau");
+    let n = prompt('nhap chuoi thu 1: ');
+    let n1 = prompt('nhap chuoi thu 2: ');
+    let flag = true;
+    if (n.length !== n1.length){
+        document.write('2 chuoi khac nhau')
+        flag=false
     }
-    else{
-        document.write("2 chuỗi giống nhau")
+    else {
+    for (let i = 0; i <n.length ; i++) {
+        n.charAt(i)
+        if (n.charAt(i) !== n1.charAt(i)){
+            document.write('2 chuoi khac nhau');
+            flag=false
+            break
+        }
     }
-
+    }
+    if (flag === true){
+        document.write('2 chuoi giong nhau')
+    }
 </script>
 </body>
 </html>
