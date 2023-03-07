@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Person {
+        constructor(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(newName) {
+            this.name = newName;
+        }
+    }
+
+    class Teacher extends Person {
+        constructor(name,age) {
+            super(name);
+            this.age = age;
+        }
+        // getName() {
+        //     return "ABC";
+        // }
+    }
+
+    let teacher = new Teacher("Công",32);
+    document.write(teacher.getName() + "<br>");
+    teacher.setName("Nghĩa");
+    document.write(teacher.getName());
+
+</script>
+</body>
+</html>

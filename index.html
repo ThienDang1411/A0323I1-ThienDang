@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //tên tuổi
+    class Student {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        study(subject) {
+            document.write(this.name + " đang học môn " + subject);
+        }
+
+        getInfor() {
+            document.write("Tên: " + this.name + ". Tuổi: " + this.age + "<br>");
+        }
+
+        setName(newName) {
+            this.name = newName;
+        }
+
+        setAge(newAge) {
+            if (newAge < 16) {
+                document.write("sai tuổi vui lòng nhập lại");
+            } else {
+                this.age = newAge;
+            }
+        }
+
+        getAge() {
+            return this.age;
+        }
+    }
+
+    // Encapsulation
+    let student = new Student("Sang", 20);
+    student.getInfor();
+    student.setAge(21);
+    student.setName("Hưng");
+    document.write(student.getAge() + "<br>");
+
+    student.getInfor();
+
+
+</script>
+</body>
+</html>
