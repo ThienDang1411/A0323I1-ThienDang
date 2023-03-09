@@ -6,21 +6,25 @@
 </head>
 <body>
 <script>
-    let person = {
-        name: ['Bob', 'Smith'],
-        age: 32,
-        gender: 'male',
-        interests: ['music', 'skiing'],
-        bio: function() {
-            alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
-        },
-        greeting: function() {
-            alert('Hi! I\'m ' + this.name[0] + '.');
+    class Rectangle {
+        constructor(length,width) {
+            this.length = length;
+            this.width = width;
         }
-    };
-
-    person.greeting();
+        chuvi(){
+            document.write("Chu vi hinh chu nhat la: "+ (this.length + this.width)*2+"<br>");
+        }
+        dientich(){
+            document.write("Dien tich hinh chu nhat la: "+ this.length*this.width);
+        }
+    }
+    let length = +prompt("Nhập chiều dài");
+    let width = +prompt("Nhập chiều rộng");
+    let rectangle = new Rectangle(length,width);
+    rectangle.chuvi(length,width);
+    rectangle.dientich(length,width);
 
 </script>
+
 </body>
 </html>
