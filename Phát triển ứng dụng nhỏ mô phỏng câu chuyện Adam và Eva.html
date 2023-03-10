@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>"Sau khi an mot mieng tao la can nang : " <span id="humanweight"></span> " So tao con lai la: " <span id="appleweight"></span> </p>
+<script>
+    class Apple{
+        constructor(weight) {
+            this.weight= weight;
+        }
+        getweight(){
+            return this.weight;
+        }
+        giamdv(){
+            this.weight=this.weight-1
+        }
+    }
+    class Human{
+        constructor(name,gender,weighthuman,weightapple) {
+            this.name = name;
+            this.gender = gender;
+            this.weightHuman =  60;
+        }
+        getweightapple(weightapple) {
+            this.weightapple =  weightapple
+        }
+        eat(){
+            if (this.weightapple.getweight() >0){
+                this.weightapple.giamdv();
+                this.weightHuman = this.weightHuman += 1;
+                document.getElementById('appleweight').innerText=this.weightapple.getweight();
+                document.getElementById('humanweight').innerText=this.weightHuman;
+            }
+        };
+    }
+    let  apple =  new Apple(10);
+    let  human = new Human;
+    human.getweightapple(apple);
+
+    function eat() {
+        human.eat(apple);
+    };
+</script>
+<button type="button" onclick="eat()" > an tao </button>
+</body>
+</html>
