@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n=prompt('nhap')
+    let k=n-1;
+    for (let i = 0; i <n ; i++) {
+        for (let j = 0; j <2*n ; j++) {
+            if (j==k-i || j==k+i)
+            document.write("*")
+            else {
+                document.write('&nbsp&nbsp')
+            }
+        }
+        document.write('<br>')
+    }
+    for (let i=1;i<n*2;i++)document.write('*');
+</script>
+</body>
+</html>

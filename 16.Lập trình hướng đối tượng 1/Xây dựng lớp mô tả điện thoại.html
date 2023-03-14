@@ -9,11 +9,27 @@
     class Moblie {
         constructor(battery, memoryArea1, memoryArea2, memoryArea3) {
             this.battery = battery;
+            this.message="";
             this.memoryArea1 = memoryArea1;
             this.memoryArea2 = memoryArea2;
             this.memoryArea3 = memoryArea3;
         }
+        setMessage(message){
+           this.message=message;
+        }
+
+        getMessage(){
+            return this.message;
+        }
+        sendMessage(message,mobile){
+            mobile.setMessage(message);
+        }
     }
+    let iphone =new Moblie(1,"Iphone")
+    let nokia =new Moblie(2,"nokia")
+    iphone.sendMessage("Hi",nokia)
+    let message= nokia.getMessage();
+    console.log(message)
 </script>
 </body>
 </html>

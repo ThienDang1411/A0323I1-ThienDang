@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [2,4,6,8];
+    let n = a.length
+    let b=[];
+    let nb=0;
+    for (let i = 0; i < n; i++) {
+        if (i == 0){
+            b[nb] = a[i];
+        }
+        else {
+            b[nb] = a[i-1] + a[i];
+        }
+        nb++
+    }
+    console.log(b)
+</script>
+</body>
+</html>
