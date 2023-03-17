@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<ol>Chon thuc uong
+    <li>Cafe <input type="radio" value="15000đ" name="drinks"></li>
+    <li>Cam vat <input type="radio" value="20000đ" name="drinks"></li>
+    <li>Nuoc ep ca rot <input type="radio" value="23000đ" name="drinks"></li>
+    <li>Nuoc ep ca chua <input type="radio" value="23000đ" name="drinks"></li>
+    <li>Nuoc loc <input type="radio" value="10000đ" name="drinks"></li>
+    <li>Nuoc dua <input type="radio" value="25000đ" name="drinks"></li>
+</ol>
+<button onclick="order()">Order</button>
+<script>
+function order() {
+let choose = document.querySelector('input[name="drinks"]:checked').value;
+    switch (choose) {
+        case 0;
+        alert(ch)
+    }
+}
+</script>
 </body>
 </html>
