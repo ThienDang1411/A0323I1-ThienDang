@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let matrix2DInit=[];
+    let tong= 0;
+    for (let i = 0; i < 3; i++) {
+        matrix2DInit[i]=[];
+        document.write('<br>')
+        for (let j = 0; j < 2; j++){
+            matrix2DInit[i][j]= Math.floor(Math.random()*10);
+            document.write(matrix2DInit[i][j]+ "  ")
+        }
+    }
+
+    function ktsnt(n) {
+        if (n<2){
+            return false;
+        }else {
+            for (let i = 2; i <= Math.sqrt(n) ; i++) {
+                if (n%i===0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    for (let i = 0; i <3 ; i++) {
+        for (let j = 0; j <2; j++) {
+            if (ktsnt(matrix2DInit[i][j])===true){
+                tong += matrix2DInit[i][j];
+            }
+        }
+    }
+    document.write('<br> Tong: ')
+    document.write(tong);
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let c=['tHien','dAng'];
+    let a=[];
+    let b=[];
+    for (let i = 0; i <c.length ; i++) {
+        a[i]= c[i].toUpperCase().charAt(0)+ c[i].substring(1).toLowerCase();
+        b.push(a[i]);
+    }
+    document.write(b.join(" "));
+</script>
+</body>
+</html>

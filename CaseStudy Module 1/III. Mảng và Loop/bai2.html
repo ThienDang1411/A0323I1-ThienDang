@@ -6,20 +6,20 @@
 </head>
 <body>
 <script>
-    let a=[1,2,3,4,5]
-    let b=[1,2,3,4]
-    let c=[]
-    let n=a.length
-    let m=b.length
+    let a=[7,2,5,4,6,3,5,3];
+    let b=[7,2,5,3,5,3];
+    let c=[];
     document.write(a);
     document.write('<br>')
     document.write(b);
     document.write('<br>')
-    for (let i = 0; i <n ; i++) {
-        if (a.indexOf(b[i]) === -1 && c.indexOf(b[i])===-1){
+    for (let i = 0; i <b.length ; i++) {
+        if (a.indexOf(b[i]) === -1 && c.indexOf(b[i] === -1)){
             c.push(b[i]);
+        }else if (b.indexOf(a[i]) === -1 && c.indexOf(a[i] === -1)){
+            c.push(a[i])
         }
-    }document.write('Missing Value:' + c)
+    }document.write('Missing Value:' + c);
 
 
 </script>

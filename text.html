@@ -1,44 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Menu</title>
+    <title>Ký Tự Chung</title>
 </head>
 <body>
 <script>
-    let arr1 = [];
-    let arr2 = [];
-    let flag = false;
-    arr1 = prompt("Nhap vao chuoi so 1").split(' ');
-    arr2 = prompt("Nhap vao chuoi so 2").split(' ');
-    for (let i = 0; i < arr1.length ; i++){
-        flag = true;
-        for (let j = 0; j < arr2.length; j++){
-            if (arr1[i] === arr2[j]){
-                flag = false;
-                break
-            }else {
-                flag =true;
-            }
-            if (flag){
-                document.write(arr1[i])
+    let arr = ["a", "a", "b", "c", "c"];
+    let arr2 = ["a", "d", "c", "a", "a"];
+    let arr3 = [];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] === arr2[j] && arr.indexOf(arr2[j]) !== -1) {
+                arr3[j] = arr2.splice(j, 1);
             }
         }
     }
-    for (let i = 0; i < arr2.length ; i++){
-        flag = true;
-        for (let j = 0; j < arr1.length ; j++){
-            if (arr2[j] === arr2[j]){
-                flag = false;
-                break
-            }else {
-                flag =true;
-            }
-            if (flag){
-                document.write(arr2[i])
-            }
-        }
-    }
+    document.write(arr3.length)
+    document.write("<br>");
+    console.log(arr3)
+
 </script>
 </body>
 </html>
