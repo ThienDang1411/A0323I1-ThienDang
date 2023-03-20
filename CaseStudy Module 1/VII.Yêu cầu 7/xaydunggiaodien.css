@@ -1,0 +1,30 @@
+
+/*.title{*/
+/*    width: 100%;*/
+/*    text-align: center;*/
+/*}*/
+table tr {
+    width: 100%;
+}
+#banner table .title{
+    width: 70%;
+    text-align: right;
+}
+table #hang #title{
+    width: 100%;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+#container table{
+    width: 100%;
+}
+#baitap{
+    width: 20%;
+}
+#baitap select{
+    margin-left: 90px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

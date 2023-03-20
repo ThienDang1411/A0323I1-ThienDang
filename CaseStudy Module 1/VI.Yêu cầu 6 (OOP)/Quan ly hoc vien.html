@@ -42,7 +42,6 @@
         table += "</table>";
         document.getElementById("svlist").innerHTML = table;
     }
-
     function add(svlist) {
         let sv = new Sinhvien();
         sv.id = prompt("Nhập id");
@@ -53,7 +52,6 @@
         svlist.push(sv);
         display(svlist);
     }
-
     function fix(svlist) {
         let idCheck = prompt("nhap id muon update");
         for (let i=0; i < svlist.length ; i++ ){
@@ -83,12 +81,10 @@
             }
         }
     }
-
     let sv1 = new Sinhvien(123, "Nguyen Van Quan", 2, "quanismevn", 23);
     let sv2 = new Sinhvien(23, "Nguyen Van Quan", 2, "quanismevn", 23);
     let sv3 = new Sinhvien(13, "Nguyen Van Quan", 2, "quanismevn", 23);
     let svlist = [sv1, sv2, sv3];
     display(svlist);
-
 </script>
 </html>

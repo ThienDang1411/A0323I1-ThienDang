@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="xaydunghethong_quanlySV.css">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="addstudent(studentList)" class="btn">Thêm Mới Học Viên</button>
+<!--<button onclick="deleteStudent(id)">Xoá Học Viên</button>-->
+<button onclick="editStudent(studentList)" class="btn">Sửa Học Viên</button>
+<button></button>
+<div id="body-students"></div>
+</body>
+<script>
+    class Students {
+        constructor(id, name, clas, email, date) {
+            this.id = id;
+            this.name = name;
+            this.clas = clas;
+            this.email = email;
+            this.date = date;
+        }
+    }
+
+    let student1 = new Students("HV-001", "Alex", "A1222I1", "Alex13131@gmail.com", "4/12/2001");
+    let student2 = new Students("HV-002", "Simon", "A1222I1", "Simon13131@gmail.com", "1/1/2002");
+    let student3 = new Students("HV-003", "George", "A1222I1", "George13131@gmail.com", "28/2/2000");
+    let studentList = [student1, student2, student3];
+    displayStudents(studentList);
+
+    function displayStudents(list) {
+        let table = "<table border='1' cellpadding='10' cellspacing='0'>" + "<tr>" +
+            "<th>Mã Học Viên</th>" +
+            "<th>Tên</th>" +
+            "<th>Lớp</th>" +
+            "<th>Email</th>" +
+            "<th>Ngày Sinh</th>" +
+            "<th colspan='2'>Action</th>" +
+            "</tr>"
+        for (let i = 0; i < studentList.length; i++) {
+            table += "<tr>" +
+                "<th>" + (studentList[i].id) + "</th>" +
+                "<th>" + (studentList[i].name) + "</th>" +
+                "<th>" + (studentList[i].clas) + "</th>" +
+                "<th>" + (studentList[i].email) + "</th>" +
+                "<th>" + (studentList[i].date) + "</th>" +
+                "<th>" + '<button onclick="deleteStudent(' + i + ' )"> Xoá </button>' + "</th>" +
+                // "<th>" + '<button onclick="editStudent(' + studentList + ' )"> Sửa </button>' + "</th>" +
+                "</tr>"
+
+        }
+        table += "</table>"
+        document.getElementById("body-students").innerHTML = table;
+    }
+
+
+    function addstudent(studentList) {
+        let student = new Students();
+        let n;
+        let valid = true;
+        console.log(studentList);
+        do {
+            n = prompt("Nhập Id Bạn Muốn Thêm");
+            for (let i = 0; i < studentList.length; i++) {
+                if (studentList[i].id === n) {
+                    valid = false;
+                    alert("Id trùng nhau")
+                    break;
+                } else {
+                    valid = true;
+                }
+            }
+
+        } while (valid === false)
+        student.id = n
+        student.name = prompt("Nhập Tên:");
+        student.clas = prompt("Nhập Lớp:");
+        student.email = prompt("Nhập email:");
+        student.date = prompt("Nhập Ngày Tháng Năm Sinh:");
+        studentList.push(student);
+        displayStudents(studentList);
+
+
+    }
+
+    function deleteStudent(id) {
+        let check;
+        check = confirm("Bạn Có Muốn Xoá Học Viên " + studentList[id].name);
+        if (check) {
+            alert("Bạn Đã Xoá Học Viên" + " " + studentList[id].name);
+            studentList.splice(id, 1)
+            displayStudents(studentList);
+        }
+    }
+
+    function editStudent(student) {
+        let edit = prompt("Nhập Mã Học Viên Bạn Muốn Sửa");
+        flag = false;
+        for (let i = 0; i < studentList.length; i++) {
+            if (student[i].id === edit) {
+                student[i].id = prompt("Nhập ID:")
+                student[i].name = prompt("Nhập Tên:");
+                student[i].clas = prompt("Nhập Lớp:");
+                student[i].email = prompt("Nhập email:");
+                student[i].date = prompt("Nhập Ngày Tháng Năm Sinh:");
+                flag = true;
+                displayStudents(studentList);
+                break;
+            }
+        }
+        if (flag == false) {
+            alert("Không tìm thấy ID:")
+        }
+    }
+
+    // function editStudent(arr) {
+    //     let indexStudent = -1;
+    //     let codeSearch = prompt("Enter code student for search to edit");
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (codeSearch === arr[i].code) {
+    //             indexStudent = i;
+    //             break;
+    //         }
+    //     }
+    //     if (indexStudent === -1) {
+    //         alert("Can't find code");
+    //         return;
+    //     } else {
+    //         arr[indexStudent].code = prompt("Enter students[" + indexStudent + "].code");
+    //         arr[indexStudent].name = prompt("Enter students[" + indexStudent + "].name");
+    //         arr[indexStudent].className = prompt("Enter students[" + indexStudent + "].className");
+    //         arr[indexStudent].email = prompt("Enter students[" + indexStudent + "].email");
+    //         arr[indexStudent].dOB = prompt("Enter students[" + indexStudent + "].dOB(dd/mm/yyyy)");
+    //         arr[indexStudent].module = +prompt("Enter students[" + indexStudent + "].module(1->6)");
+    //     }
+    //     displayStudents(studentList);
+    // }
+    // function editStudent(student) {
+    //     for (let i = 0; i < studentList.length ; i++) {
+    //         student[i].id = prompt("Nhập ID mới:")
+    //         student[i].name = prompt("Nhập ID mới:")
+    //         student[i].clas = prompt("Nhập ID mới:")
+    //         student[i].email = prompt("Nhập ID mới:")
+    //         student[i].date = prompt("Nhập ID mới:")
+    //     }
+    //     displayStudents(studentList);
+    // }
+</script>
+</html>
