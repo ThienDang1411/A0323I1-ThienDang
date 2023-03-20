@@ -1,25 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ký Tự Chung</title>
+    <title>Phân Số Lớn Nhất</title>
 </head>
 <body>
 <script>
-    let arr = ["a", "a", "b", "c", "c"];
-    let arr2 = ["a", "d", "c", "a", "a"];
-    let arr3 = [];
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr.length; j++) {
-            if (arr[i] === arr2[j] && arr.indexOf(arr2[j]) !== -1) {
-                arr3[j] = arr2.splice(j, 1);
-            }
+    let numeratorsLength =  +prompt("Input Length of numerators: ")
+    let denominatorsLength = +prompt("Input Length of denominators: ")
+    let numerators =[];
+    let denominators =[];
+    for (let i = 0; i < numeratorsLength ; i++) {
+        let n = +prompt("Nhập Tử Số:");
+        numerators[i] = n;
+
+    }
+    document.write(numerators)
+    document.write("<br>")
+    for ( i = 0; i < denominatorsLength ; i++) {
+        let m = +prompt("Nhập Mẫu Số:");
+        denominators[i] = m;
+
+    }
+    document.write(denominators)
+    document.write("<br>")
+    let sum;
+    let result = [];
+    for (let i = 0; i < numeratorsLength ; i++) {
+        sum = numerators[i] / denominators[i];
+        result.push(sum)
+        document.write(numerators[i] + "/" + denominators[i] + " = "+ sum + '<br>' )
+    }
+    let max = numerators[0] / denominators[0] ;
+    let index = 0;
+    for (let i = 1; i < numeratorsLength; i++) {
+        if (max < result[i]) {
+            max = result[i];
+            index = i;
         }
     }
-    document.write(arr3.length)
-    document.write("<br>");
-    console.log(arr3)
+    document.write("Phân Số Lớn Nhất là :" + max + "Tại Vị Trí:" + index )
 
 </script>
 </body>
