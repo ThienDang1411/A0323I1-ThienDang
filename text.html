@@ -29,6 +29,7 @@
             "<th>Lớp</th>" +
             "<th>Email</th>" +
             "<th>Ngày Sinh</th>" +
+            "<th colspan='2'>Action</th>" +
             "</tr>"
         for (let i = 0; i < svlist.length; i++) {
             table += "<tr>" +
@@ -37,21 +38,40 @@
                 "<td>" + (svlist[i].classs) + "</td>" +
                 "<td>" + (svlist[i].email) + "</td>" +
                 "<td>" + (svlist[i].dateOfBirth) + "</td>" +
+                "<th>" + '<button onclick="deleteStudent(' + i + ' )"> Xoá </button>' + "</th>" +
                 "</tr>"
         }
         table += "</table>";
         document.getElementById("svlist").innerHTML = table;
     }
 
-    function add(svlist) {
-        let sv = new Sinhvien();
-        sv.id = prompt("Nhập id");
-        sv.name = prompt("Nhập tên:");
-        sv.classs = prompt("NHập lớp:");
-        sv.email = prompt("Nhập email:");
-        sv.dateOfBirth = prompt("Nhập ngày tháng năm sinh :");
-        svlist.push(sv);
-        display(svlist);
+    function addstudent(studentList) {
+        let student = new Students();
+        let n;
+        let valid = true;
+        console.log(studentList);
+        do {
+            n = prompt("Nhập Id Bạn Muốn Thêm");
+            for (let i = 0; i < studentList.length; i++) {
+                if (studentList[i].id === n) {
+                    valid = false;
+                    alert("Id trùng nhau")
+                    break;
+                } else {
+                    valid = true;
+                }
+            }
+
+        } while (valid === false)
+        student.id = n
+        student.name = prompt("Nhập Tên:");
+        student.clas = prompt("Nhập Lớp:");
+        student.email = prompt("Nhập email:");
+        student.date = prompt("Nhập Ngày Tháng Năm Sinh:");
+        studentList.push(student);
+        displayStudents(studentList);
+
+
     }
 
     function fix(svlist) {

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [1,2,1,2,1,2];
+    // for (let i = 0; i <5 ; i++) {
+    //     arr[i] = Math.floor(Math.random() * 50);
+    // }
+    function kiemtra(){
+        for (let i = 0; i < arr.length; i++) {
+            if (i!==0&&i!==arr.length){
+                if (arr[i]>arr[i-1]){
+                    return false
+                }else if (arr[i]<=arr[i+1]){
+
+                }
+                if (arr[i]<arr[i-1]){
+                    return false
+                }else if (arr[i]>=arr[i+1]){
+
+                }
+            }
+        }return true
+    }
+        document.write(arr)
+    document.write(kiemtra())
+</script>
+</body>
+</html>

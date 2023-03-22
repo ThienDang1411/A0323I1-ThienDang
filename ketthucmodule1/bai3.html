@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="list"></div>
+<button type="submit" onclick="add(list)">Them</button>
+<button type="submit" onclick="deletee(list)">Sua</button>
+<button type="submit" onclick="fix(list)">Xoa</button>
+</body>
+<script>
+    class xe{
+        constructor(bienso, name, cmnd, hangxe, phi) {
+            this.bienso= bienso;
+            this.name =  name;
+            this.cmnd=  cmnd;
+            this.hangxe= hangxe;
+            this.phi= phi;
+        }
+    }
+    let xe1=new xe('12345H7612','Dang Van Tri Thien', '048202000365', 'Honda',24000);
+    let xe2=new xe('12345D7612','Tran Anh Tuan', '048202000365', 'Honda',0);
+    let list=[xe1,xe2];
+    display(list);
+    function display(list) {
+        let table="<table border='1' cellpadding='10' cellspacing='0'>"+
+            '<tr>'+
+            '<th>Bien So Xe</th>'+
+            '<th>Ho Ten Sinh Vien</th>'+
+            '<th>Chung Minh Nhan Dan</th>'+
+            '<th>Hang Xe</th>'+
+            '<th>Phi Da GUi</th>'+
+            '</tr>'
+        for (let i = 0; i < list.length; i++) {
+            table+='<tr>'+
+                "<th>"+list[i].bienso+"</th>"+
+                "<th>"+list[i].name+"</th>"+
+                "<th>"+list[i].cmnd+"</th>"+
+                "<th>"+list[i].hangxe+"</th>"+
+                "<th>"+list[i].phi+"</th>"+
+                '</tr>'
+        }
+        table+="</table>"
+        document.getElementById('list').innerHTML=table;
+    }
+    function add(list) {
+        let Xe=new xe()
+        Xe.bienso=prompt('nhap bien so')
+        Xe.name=prompt('nhap Ten Sinh Vien')
+        Xe.cmnd=prompt('nhap cmnd')
+        Xe.Hangxe=prompt('nhap Hang xe')
+        Xe.phi=+prompt('nhap phi da gui')
+        list.push(Xe)
+        display(list)
+    }
+    function deletee(list) {
+        let checkdl= prompt('Nhap bien so xe muon xoa')
+        for (let i = 0; i <list.length ; i++) {
+            if (list[i].bienso === checkdl){
+                list.splice(i,1)
+                display(list);
+            }else {
+                alert('ko tim thay')
+
+            }
+        }
+    }
+    function fix(lish) {
+        let checkf=prompt('nhap bien so muon update')
+        for (let i = 0; i < lish.length; i++) {
+            if (lish[i].bienso == checkf){
+                lish[i].name=prompt('nhap ten')
+                lish[i].cmnd=prompt('nhap cmnd')
+                lish[i].hangxe=prompt('nhap hang xe')
+                lish[i].phi=prompt('nhap phi da tra')
+                display(lish);
+                break;
+            }else {
+                alert('bien so xe ko ton tai')
+            }
+        }
+    }
+</script>
+</html>
